@@ -7,29 +7,22 @@
   (ngSubmit)="submit()"
 >
   <!--begin::Heading-->
-  <div class="text-center mb-10">
-    <h1 class="text-dark mb-3">Sign In to Metronic</h1>
-    <div class="text-gray-400 fw-bold fs-4">
-      New Here?
-      <a
-        routerLink="/auth/registration"
-        id="kt_login_signup"
-        class="link-primary fw-bolder"
-        >{{ "AUTH.GENERAL.SIGNUP_BUTTON" | translate }}</a
-      >
-    </div>
+  <div class="text-start mb-10">
+    <h1 class="text-dark mb-1">Login to your Account</h1>
+    <h5 class="text-dark mb-3">See what is going on with your expenses!</h5>
+    
   </div>
   <!--end::Heading-->
 
   <!-- begin::Alert info-->
-  <ng-container *ngIf="!hasError">
+ <!--  <ng-container *ngIf="!hasError">
     <div class="mb-10 bg-light-info p-8 rounded">
       <div class="text-info">
         Use account <strong>{{ defaultAuth.email }}</strong> and password
         <strong>{{ defaultAuth.password }}</strong> to continue.
       </div>
     </div>
-  </ng-container>
+  </ng-container> -->
   <!-- end::Alert info-->
 
   <!-- begin::Alert error-->
@@ -96,14 +89,7 @@
     <div class="d-flex justify-content-between mt-n5">
       <div class="d-flex flex-stack mb-2">
         <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
-        <a
-          routerLink="/auth/forgot-password"
-          class="link-primary fs-6 fw-bolder"
-          id="kt_login_forgot"
-          [style.margin-left]="'5px'"
-        >
-          Forgot Password ?
-        </a>
+
       </div>
     </div>
 
@@ -142,6 +128,17 @@
         control: loginForm.controls['password']
       }"
     ></ng-container>
+    <div class="text-end">
+      <a
+      routerLink="/auth/forgot-password"
+      class="link-primary fs-7 fw-bolder"
+      id="kt_login_forgot"
+      [style.margin-left]="'5px'"
+      >
+      Forgot Password?
+      </a>
+    </div>
+
   </div>
   <!--end::Form group-->
 
@@ -162,15 +159,24 @@
         </span>
       </ng-container>
       <ng-container *ngIf="!(isLoading$ | async)">
-        <span class="indicator-label">Continue</span>
+        <span class="indicator-label">Login</span>
       </ng-container>
     </button>
+    <div class="text-center text-gray-400 fw-bold fs-7">
+      Not Registered Yet?
+      <a
+        routerLink="/auth/registration"
+        id="kt_login_signup"
+        class="link-primary fw-bolder fs-6"
+        >{{ "AUTH.GENERAL.SIGNUP_BUTTON" | translate }}</a
+      >
+    </div>
 
     <!-- begin::Separator  -->
-    <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div>
+    <!-- <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div> -->
     <!-- end::Separator  -->
 
-    <a
+<!--     <a
       class="
         btn btn-flex
         flex-center
@@ -186,8 +192,9 @@
       />
 
       Continue with Google
-    </a>
+    </a> -->
   </div>
+
   <!--end::Action-->
 </form>
 <!--end::Form-->

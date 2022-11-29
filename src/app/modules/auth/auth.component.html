@@ -4,18 +4,26 @@
     flex-column flex-column-fluid
     bgi-position-y-bottom
     position-x-center
-    bgi-no-repeat bgi-size-contain bgi-attachment-fixed
+    bgi-repeat bgi-size-contain bgi-attachment-fixed
   "
-  style="background-image: url('./assets/media/backgrounds/expenses.png');background-size: auto;"
+  style="background-image: url('./assets/media/backgrounds/expenses.png');background-size: auto;background-repeat: repeat;"
 >
   <!--begin::Content-->
-  <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
-    <a routerLink="/" class="mb-12"
-      ><img alt="Logo" src="./assets/media/logos/logo-1.svg" class="h-45px"
-    /></a>
-
+  <div class="d-flex flex-center flex-column flex-column-fluid pt-10" style="padding-bottom: 18rem !important;">
+    <div class="row">
+      <div class="col-sm-2 mb-3">
+        <a routerLink="/" >
+          <img alt="Logo" src="./assets/media/icons/time-is-money.png" class="h-65px"/>      
+        </a>
+      </div>
+      <div class="col-sm-10 mt-5">
+        <a routerLink="/">
+          <h1 class="text-center text-dark mb-5">Monthly Expense Tracker</h1>
+        </a>
+      </div>
+    </div>
     <!--begin::Content body-->
-    <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
+    <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-20 mx-auto">
       <router-outlet></router-outlet>
     </div>
     <!--end::Content body-->
@@ -23,13 +31,11 @@
   <!--end::Content-->
 
   <!-- begin::Footer -->
-  <div class="d-flex flex-center flex-column-auto p-10">
-    <div class="d-flex align-items-center fw-bold fs-6">
-      <a class="text-muted text-hover-primary px-2 cursor-pointer">About</a
-      ><a class="text-muted text-hover-primary px-2 cursor-pointer">Contact</a
-      ><a class="text-muted text-hover-primary px-2 cursor-pointer"
-        >Contact Us</a
-      >
+  <div class="d-flex flex-center flex-column-auto pt-lg-10" >
+    <div class="d-flex align-items-center fw-bold fs-6 pb-lg-16">
+      <a class="text-muted text-hover-primary pt-lg-22 px-2 cursor-pointer">About</a
+      ><a class="text-muted text-hover-primary pt-lg-22 px-2 cursor-pointer">Contact</a
+      ><a class="text-muted text-hover-primary pt-lg-22 px-2 cursor-pointer">Contact Us</a>
     </div>
   </div>
   <!-- end::Footer -->
